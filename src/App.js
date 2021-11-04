@@ -7,7 +7,7 @@ import { useState } from "react"
 
 
 function App() {
-  const [tasks, setTask] = useState([
+  const [tasks, setTasks] = useState([
     {
         id:1,
         text: 'Doctors Apointment',
@@ -27,10 +27,16 @@ function App() {
         reminder: false,
     }
 ])
+
+const deleteTask = (id) => {
+  setTasks(tasks.filter((task) => task.id !== id))
+}
+
+
   return (
     <div className="App">
       <Header/>
-      <Tasks tasks = {tasks}/>
+      <Tasks tasks = {tasks} onDelete={deleteTask}/>
       
     </div>
   );

@@ -1,14 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
+import Tasks from './components/Tasks';
+import { useState } from "react"
+
+
+
 
 function App() {
-  const name = 'Pityu'
+  const [tasks, setTask] = useState([
+    {
+        id:1,
+        text: 'Doctors Apointment',
+        day: ' Feb 5th',
+        reminder: true,
+    },
+    {
+        id:2,
+        text: 'Meeting at School',
+        day: ' Feb 5th',
+        reminder: true,
+    },
+    {
+        id:3,
+        text: 'Food Shopping',
+        day: ' Feb 5th',
+        reminder: false,
+    }
+])
   return (
     <div className="App">
-      <Header title='Valami'/>
-      <h1>Hello from React</h1>
-      <h2>Külön öröm neked {name}</h2>
+      <Header/>
+      <Tasks tasks = {tasks}/>
+      
     </div>
   );
 }

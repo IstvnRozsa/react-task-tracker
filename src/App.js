@@ -6,7 +6,7 @@ function App() {
   const name = 'Pityu'
   return (
     <div className="App">
-      <Header></Header>
+      <Header title='Valami'/>
       <h1>Hello from React</h1>
       <h2>Külön öröm neked {name}</h2>
     </div>
